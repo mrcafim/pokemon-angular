@@ -1,0 +1,26 @@
+<h2>
+    Gerações
+</h2>
+<div class="lista">
+    <table class="table table-hover" style="text-align: center;">
+        <thead>
+            <tr>
+                <th style="width: 10%;">Id</th>
+                <th style="width: 80%;">Nome</th>
+                <th style="width: 10%;">Detalhes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let generation of listaGeracoes | paginate: { itemsPerPage: 10, currentPage: paginacao }" class="pointer">
+                <td (click)="generationDetalhe(generation.id)"> {{generation.id }}</td>
+                <td (click)="generationDetalhe(generation.id)">{{generation.name | capitalize }}</td>
+                <td><a class="pointer text-orange" (click)="generationDetalhe(generation.id)"><i class="fas fa-eye"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<pagination-controls class="my-pagination" (pageChange)="paginacao = $event" previousLabel="Anterior" nextLabel="Próxima">
+</pagination-controls>

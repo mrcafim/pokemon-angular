@@ -24,6 +24,8 @@ import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PokemonComponent } from './components/pokemon/pokemon/pokemon.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ListaGenerationComponent } from './components/generation/lista-generation/lista-generation.component';
+import { GenerationComponent } from './components/generation/generation/generation.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     NotFoundComponent,
     HomeComponent,
     ListaPokemonsComponent,
-    PokemonComponent
+    PokemonComponent,
+    ListaGenerationComponent,
+    GenerationComponent
   ],
   imports: [
     BrowserModule,

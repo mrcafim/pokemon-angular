@@ -1,0 +1,54 @@
+<div class="card-panel white" *ngIf="generation">
+    <div style="padding-top: 15px">
+        <div class="pokemon-header">
+            <div class="row title valign-wrapper">
+                <div class="col s6">
+                    <span>{{ generation.name | capitalize }}</span>
+                </div>
+                <div class="col s6">
+                    <div class="right-align">
+                        <strong class="pokemon-number">{{ generation.id }}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="text-align: center; padding-top: 40px; font-size: 19px;">
+            <div class="col-md-12">
+                <strong>Região principal: </strong> 
+                <span>{{ generation.main_region.name | capitalize }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="lista" style="padding-top: 40px;">
+        <table class="table table-hover" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th>Pokémons da Geração</th>
+                </tr>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pokemon of generation.pokemon_species | paginate: { itemsPerPage: 10, currentPage: paginacao }" class="pointer">
+                    <td>{{pokemon.name | capitalize }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <pagination-controls class="my-pagination" (pageChange)="paginacao = $event" previousLabel="Anterior" nextLabel="Próxima">
+    </pagination-controls>
+   
+
+
+
+
+
+    <div class="details">Mais detalhes em breve!</div>
+    <div class="retorno">
+        <a href="#" [routerLink]="['/lista-generation']">Voltar para a lista de Gerações.</a>
+    </div>
+</div>
