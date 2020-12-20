@@ -1,0 +1,15 @@
+<nav class="menu">
+    <div class="box-menu">
+        <div class="fechar" (click)="ocultarMenu()"><i class="fas fa-times"></i></div>
+        <div class="topo-menu">
+            <img src="assets/img/pokebola.png" alt="pokemon" style="width: 30%;">
+        </div>
+        <ul id="accordion-menu" class="main-menu">
+            <li (click)="navegar(['home'])"><a class="submenu-toggle">Início</a>
+            </li>
+            <li (click)="navegar(['lista-pokemons'])"><a class="submenu-toggle">Pokémons</a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu-shadow" (click)="ocultarMenu()"></div>
+</nav>

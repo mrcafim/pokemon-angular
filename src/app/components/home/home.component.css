@@ -1,0 +1,26 @@
+
+.novos {
+    border-radius: 3px;
+    background: #DF6D27;
+    padding: .75em;
+    margin-bottom: 1em;
+}
+
+.novos p,
+.novos label,
+.novos .pb {
+    margin-bottom: 0;
+    color: #fff !important;
+}
+
+.novos p span {
+    font-size: 1.25em;
+    margin-right: .4em;
+    float: left;
+    margin-top: -2px;
+}
+
+.novos p b {
+    font-weight: normal;
+    font-family: 'frutiger-bold';
+}

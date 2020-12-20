@@ -1,0 +1,73 @@
+<div class="card-panel white" *ngIf="pokemon">
+    <div style="padding-top: 15px">
+        <div class="pokemon-header">
+            <div class="row title valign-wrapper">
+                <div class="col s6">
+                    <span>{{ pokemon.name | capitalize }}</span>
+                </div>
+                <div class="col s6">
+                    <div class="right-align">
+                        <strong class="pokemon-number">{{ pokemon.id }}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pokemon-image-container">
+            <img class="pokemon-image" src="{{ pokemon.imageURL }}" alt="{{ pokemon.name }}">
+        </div>
+    </div>
+
+    <div style="padding-top: 30px;">
+        <div class="row">
+            <div class="col-md-6">
+                <strong>Peso: </strong>
+                {{ calcularPeso(pokemon.weight) }} kilos
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                <strong>Altura:&nbsp; </strong>
+                 {{ calcularAltura(pokemon.height) }} metros
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <strong>XP obtida ao derrotar: </strong>
+                {{ pokemon.base_experience }}
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                <strong>Tipo: </strong>
+                    <div *ngFor="let type of pokemon.types" style="margin-left: 10px;">
+                        {{ type.type.name | capitalize }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-top: 30px;">
+        <h2>Status do Pokémon: </h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <ul materialize class="tabs">
+                    <ul class="tabs" materialize="tabs">
+                        <div *ngFor="let stat of pokemon.stats" style="margin-left: 10px;">
+                            <li class="tab col s3">{{stat.stat.name | capitalize }}: {{ stat.base_stat }}</li>
+                        </div>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+    <div class="details">Mais detalhes em breve!</div>
+    <div class="retorno">
+        <a href="#" [routerLink]="['/lista-pokemons']">Voltar para a lista de Pokémons.</a>
+    </div>
+</div>

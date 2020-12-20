@@ -1,0 +1,18 @@
+.nao-encontrado {
+    text-align: center;
+    margin: 6em 0;
+}
+
+.nao-encontrado h2 {
+    border-bottom: 0;
+}
+
+.nao-encontrado p {
+    font-size: 12em;
+}
+
+.nao-encontrado a {
+    display: block;
+    color: #3777BC;
+    margin-top: -3em;
+}

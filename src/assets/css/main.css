@@ -1,0 +1,409 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'frutiger-roman';
+    src: url('../fonts/frutiger-roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'frutiger-bold';
+    src: url('../fonts/frutiger-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'frutiger-black';
+    src: url('../fonts/frutiger-black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* /Fonts */
+
+
+/* Body */
+
+body {
+    font-family: 'frutiger-roman';
+    font-size: 13px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+    color: #6D6D6D;
+    background-color: #fff;
+}
+
+.wrapper {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+}
+
+
+/* /Body */
+
+@keyframes fundoheader {
+    0% {
+        background-position: 0 center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0 center;
+    }
+}
+
+/* Menu lateral */
+
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 100;
+    opacity: 0;
+    left: -100%;
+    transition: all .5s;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+    overflow: auto;
+}
+
+.mostrar-menu {
+    left: 0;
+    opacity: 1;
+}
+
+.menu .fechar {
+    color: #ccc;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.menu .box-menu {
+    background: #fff;
+    width: 25%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    box-shadow: 0 0 50px #000;
+    left: -100%;
+    transition: all .5s ease;
+}
+
+.menu .menu-shadow {
+    background: rgba(0, 0, 0, 0.5);
+    width: 75%;
+    min-height: 100%;
+    margin-left: 25%;
+}
+
+.menu .mostrar-menu-box {
+    left: 0;
+}
+
+.menu .topo-menu {
+    background: #3777BC;
+    padding: 2.5em 1.5em 1.5em;
+    text-align: center;
+}
+
+.menu .topo-menu span {
+    border: 1px solid #fff;
+    padding: .5em .7em;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.menu .topo-menu p {
+    color: #fff;
+    margin: 1.5em 0 0 0;
+}
+
+.menu .topo-menu p a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+.menu .main-menu {
+    padding: 0 1.5em 1em;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu .main-menu a {
+    cursor: pointer;
+    display: block;
+    font-family: 'frutiger-roman';
+}
+
+.menu ul.main-menu li a.submenu-toggle {
+    color: #3777BC;
+    display: block;
+    border-bottom: 1px solid rgba(55, 119, 188, 0.4);
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: .8rem;
+    font-family: 'frutiger-bold';
+}
+
+.menu .main-menu ul li a {
+    color: rgba(109, 109, 109, 0.8);
+    padding-left: 1.8em;
+    font-size: .7rem;
+}
+
+.menu .main-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.menu .main-menu a span {
+    font-size: .9rem;
+    margin-right: .3em;
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+}
+
+.menu .main-menu a:hover {
+    text-decoration: none;
+}
+
+/* /Menu lateral */
+
+
+/* Header */
+
+.header {
+    padding: .6em 0;
+    background: #3777BC;
+    position: relative;
+}
+
+.header img {
+    width: auto;
+    height: 2em;
+}
+
+.header span {
+    font-size: 1.3em;
+    color: #fff;
+    display: inline-block;
+    padding: 0.25em .75em 0 0;
+    cursor: pointer;
+}
+
+.cenario {
+    background-image: url('../img/cenario.png');
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: fundo 100s linear infinite;
+    -webkit-animation: fundo 100s linear infinite;
+    -moz-animation: fundo 100s linear infinite;
+    transition: all ease;
+    z-index: 0;
+    background-attachment: scroll;
+    background-size: auto 100%;
+}
+
+.pikachu {
+    background-image: url('../img/pikachu.gif');
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 2.25em;
+    width: 100%;
+    height: 100%;
+    animation: trem 20s linear infinite;
+    -webkit-animation: trem 20s linear infinite;
+    -moz-animation: trem 20s linear infinite;
+    transition: all ease;
+    -webkit-transition: all ease;
+    -moz-transition: all ease;
+    background-attachment: scroll;
+    background-size: auto 30%;
+}
+
+@keyframes fundo {
+    from {
+        background-position: 800px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes trem {
+    from {
+        background-position: -200px 0;
+    }
+    to {
+        background-position: calc(100% + 200px) 0;
+    }
+}
+
+/* /Header */
+
+
+/* Conteúdo */
+
+main {
+    padding: 1em 0 5em;
+}
+
+main .container h2 {
+    color: #DF6D27;
+    font-family: 'frutiger-bold';
+    font-size: 1.5em;
+    padding-bottom: .25em;
+    margin: 1em 0;
+    border-bottom: 3px solid #f0f0f0;
+}
+
+main .lista {
+    border-radius: 3px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+main .lista table {
+    width: 100%;
+}
+
+main .lista table thead {
+    background-color: #f0f0f0;
+}
+
+main .lista table a,
+main .lista table .dropdown-item {
+    color: #6d6d6d;
+    transition: all .2s ease;
+}
+
+main .lista table thead tr th {
+    padding: .75em .75em;
+    color: #6d6d6d;
+    font-weight: normal;
+    font-family: 'frutiger-bold';
+}
+
+main .lista table thead tr th span {
+    float: left;
+    font-family: 'frutiger-roman';
+}
+
+main .lista table tbody {
+    background: #fff;
+    vertical-align: top;
+}
+
+main .lista table tbody tr {
+    transition: all .2s ease;
+    background-color: #fff;
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#826d6d6d', endColorstr='#006d6d6d', GradientType=0);
+}
+main .lista table tbody tr:hover {
+    background-color: #e4e4e4 !important;
+}
+
+main .lista table tbody tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.5);
+}
+
+main .lista table tbody tr td {
+    padding: .75em .75em;
+    color: #6D6D6D;
+    font-weight: normal;
+    font-size: .9em;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: middle;
+}
+
+main .lista table thead tr th:last-child {
+    text-align: center;
+}
+
+main .lista table tbody tr td:last-child {
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: middle;
+}
+
+/* /Conteúdo */
+
+
+/* Footer */
+
+footer {
+    background: #3777BC;
+    padding: .75em 0;
+    -webkit-box-shadow: 0px -1px 3px 1px rgba(0,0,0,.3);
+    box-shadow: 0px -1px 3px 1px rgba(0,0,0,.3);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    color: #fff;
+    margin: 0;
+    font-family: 'frutiger-bold';
+}
+
+footer p span {
+    float: right;
+}
+
+/* Footer */
+
+
+/* NGX Pagination styles */
+
+.ngx-pagination {
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: transparent !important;
+    text-decoration: none;
+    color: #6d6d6d !important;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    color: #3777bc !important;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #3777BC;
+}
+
+::placeholder {
+    color: rgb(160, 158, 158) !important;
+}
+
+/* NGX Pagination styles */
+
